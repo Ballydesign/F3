@@ -6,6 +6,33 @@
     <meta name="description" content="&lt;model-viewer&gt; template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" href="./styles.css" rel="stylesheet"/>
+
+    <style type="text/css">
+  		.mobileShow {
+  			display: none;
+  		}
+
+  		/* Smartphone Portrait and Landscape */
+  		@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  			.mobileShow {
+  				display: inline;
+  			}
+  		}
+  	</style>
+  	<style type="text/css">
+  		.mobileHide {
+  			display: inline;
+  		}
+
+  		/* Smartphone Portrait and Landscape */
+  		@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  			.mobileHide {
+  				display: none;
+  			}
+  		}
+  	</style>
+
+
     <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
     <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
   </head>
@@ -37,6 +64,6 @@
     <script src="script.js"></script>
     <!-- Loads <model-viewer> for browsers: -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-    
+
   </body>
 </html>
