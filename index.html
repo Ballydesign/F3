@@ -1,184 +1,29 @@
 <!doctype html>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title> Bally Design AR Model Viewer</title>
 <html lang="en">
-
-<head>
-
-	<style type="text/css">
-		.mobileShow {
-			display: none;
-		}
-
-		/* Smartphone Portrait and Landscape */
-		@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-			.mobileShow {
-				display: inline;
-			}
-		}
-	</style>
-	<style type="text/css">
-		.mobileHide {
-			display: inline;
-		}
-
-		/* Smartphone Portrait and Landscape */
-		@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-			.mobileHide {
-				display: none;
-			}
-		}
-	</style>
-	<style>
-		model-viewer {
-			height: 500px;
-			width: 100%;
-			margin: 0 auto;
-		}
-
-		.progress-bar {
-			display: block;
-			width: 33%;
-			height: 10%;
-			max-height: 2%;
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			transform: translate3d(-50%, -50%, 0);
-			border-radius: 25px;
-			box-shadow: 0px 3px 10px 3px rgba(0, 0, 0, 0.5), 0px 0px 5px 1px rgba(0, 0, 0, 0.6);
-			border: 1px solid rgba(255, 255, 255, 0.9);
-			background-color: rgba(0, 0, 0, 0.5);
-		}
-
-		.progress-bar.hide {
-			visibility: hidden;
-			transition: visibility 0.3s;
-		}
-
-		.update-bar {
-			background-color: rgba(255, 255, 255, 0.9);
-			width: 0%;
-			height: 100%;
-			border-radius: 25px;
-			float: left;
-			transition: width 0.3s;
-		}
-
-		#ar-button {
-			background-image: url(asset/ariconewhite.png);
-			background-repeat: no-repeat;
-			background-size: 22px 26px;
-			background-position: 12px 50%;
-			background-color: #FFC843;
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			white-space: nowrap;
-			bottom: 20px;
-			padding: 0px 16px 0px 45px;
-			font-family: Roboto Regular, Helvetica Neue, sans-serif;
-			font-size: 15px;
-			color: #ffffff;
-			height: 36px;
-			line-height: 36px;
-			border-radius: 18px;
-			border: 0px solid #000000;
-		}
-
-		#ar-button:active {
-			background-color: #E8EAED;
-		}
-
-		#ar-button:focus {
-			outline: none;
-		}
-
-		#ar-button:focus-visible {
-			outline: 1px solid #4285f4;
-		}
-
-		@keyframes circle {
-			from {
-				transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg);
-			}
-
-			to {
-				transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg);
-			}
-		}
-
-		@keyframes elongate {
-			from {
-				transform: translateX(100px);
-			}
-
-			to {
-				transform: translateX(-100px);
-			}
-		}
-
-		model-viewer>#ar-prompt {
-			position: absolute;
-			left: 50%;
-			bottom: 175px;
-			animation: elongate 2s infinite ease-in-out alternate;
-			display: none;
-		}
-
-		model-viewer[ar-status="session-started"]>#ar-prompt {
-			display: block;
-		}
-
-		model-viewer>#ar-prompt>img {
-			animation: circle 4s linear infinite;
-		}
-
-		model-viewer>#ar-failure {
-			position: absolute;
-			left: 50%;
-			transform: translateX(-50%);
-			bottom: 175px;
-			display: none;
-		}
-
-		model-viewer[ar-tracking="not-tracking"]>#ar-failure {
-			display: block;
-		}
-	</style>
-	<script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
-
-</head>
-
-<body style="text-align:center">
-
-	<model-viewer src="asset/Pumpkin.glb" ar ar-modes="webxr scene-viewer quick-look" ios-src="asset/Pumpkin.usdz" ar-scale="fixed" ar ar-placement="floor" exposure="1.0" shadow-intensity="1" camera-orbit="-10deg 80deg auto"
-		min-camera-orbit="auto 0deg auto" max-camera-orbit="auto 104deg auto" camera-controls ar auto-rotate autoplay>
-
-		<button slot="ar-button" id="ar-button"> View in your space</button>
-		<div id="ar-prompt">
-			<img src="asset/ar_hand_prompt.png">
-		</div>
-
-	</model-viewer>
-
-	<script src="script.js"></script>
-
-	<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-	<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
-
-	<div class="mobileShow">
-		<img src="asset/Mobile-Instruction-2.png" style="max-width:95%; height:auto; padding: 0px 0px 0px 10px;">
-	</div>
-	<div class="mobileHide">
-		<picture>
-			<img src="asset/instruction_web.png" style="width:500px; height:auto;">
-		</picture>
-	</div>
-
-
-
-</body>
-
+  <head>
+    <title>&lt;model-viewer&gt; template</title>
+    <meta charset="utf-8">
+    <meta name="description" content="&lt;model-viewer&gt; template">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" href="./styles.css" rel="stylesheet"/>
+    <!-- OPTIONAL: The :focus-visible polyfill removes the focus ring for some input types -->
+    <script src="https://unpkg.com/focus-visible@5.0.2/dist/focus-visible.js" defer></script>
+  </head>
+  <body>
+    <!-- <model-viewer> HTML element -->
+    <model-viewer src="asset/Pumpkin.glb" ar ar-modes="webxr scene-viewer quick-look" camera-controls poster="asset/poster.webp" shadow-intensity="1" autoplay>
+      <div class="progress-bar hide" slot="progress-bar">
+          <div class="update-bar"></div>
+      </div>
+      <button slot="ar-button" id="ar-button">
+          View in your space
+      </button>
+      <div id="ar-prompt">
+          <img src="asset/ar_hand_prompt.png">
+      </div>
+    </model-viewer>
+    <script src="script.js"></script>
+    <!-- Loads <model-viewer> for browsers: -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  </body>
 </html>
