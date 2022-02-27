@@ -33,7 +33,7 @@ model-viewer {
   color: #ffffff;
   height: 60px;
   line-height: 36px;
-  border-radius: 18px;
+  border-radius: 50%px;
   border: 0px solid #000000;
 }
 
