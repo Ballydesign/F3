@@ -20,20 +20,20 @@ model-viewer {
 #ar-button {
   background-image: url(asset/ariconewhite.png);
   background-repeat: no-repeat;
-  background-size: 44px 52px;
+  background-size: 40px 46px;
   background-position: 50% 50%;
   background-color: #FFC843;
   position: absolute;
   right: 16px;
   white-space: nowrap;
   bottom: 16px;
-  padding: 0px 16px 0px 45px;
+  padding: 0px 0px;
   font-family: Roboto Regular, Helvetica Neue, sans-serif;
   font-size: 15px;
   color: #ffffff;
   height: 60px;
   line-height: 36px;
-  border-radius: 18px;
+  border-radius: 30px;
   border: 0px solid #000000;
 }
 
